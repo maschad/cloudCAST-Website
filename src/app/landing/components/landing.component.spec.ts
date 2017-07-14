@@ -1,11 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LandingComponent } from './landing.component';
-import {FormBuilder} from "@angular/forms";
+import {Observable} from "rxjs";
+import {LandingService} from "../services/landing.service";
 
 describe('LandingComponent', () => {
   let component: LandingComponent;
   let fixture: ComponentFixture<LandingComponent>;
+  let service: LandingService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -15,7 +17,8 @@ describe('LandingComponent', () => {
   }));
 
   beforeEach(() => {
-    component = new LandingComponent(new FormBuilder());
+    service = new LandingService(null);
+    component = new LandingComponent(null, service);
     fixture.detectChanges();
   });
 
@@ -66,6 +69,25 @@ describe('LandingComponent', () => {
        component.submitForm();
 
        expect(component.form).toBeNull();
+    });
+
+    it('Should call the server when a user submits their email & password', () => {
+        let spy = spyOn(service, 'signupUser').and.callFake(user => {
+            return Observable.empty()
+        });
+
+        component.signUp();
+
+        expect(spy).toHaveBeenCalled();
+    });
+
+    it('Should call the server when a user submits their email & password', () => {
+        let success = { userid: 1 , success: true};
+        let spy = spyOn(service, 'signupUser').and.returnValue(Observable.from([success]));
+
+        component.signUp();
+
+        expect(spy).toHaveBeenCalled();
     });
 
 

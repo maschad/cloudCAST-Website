@@ -7,6 +7,8 @@ import {LandingModule} from "./landing/index";
 import {MdToolbarModule, MdButtonModule, MdMenuModule, MdIconModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {RouterModule} from "@angular/router";
+import {LoginModule} from "./login/index";
+import {SignupModule} from "./signup/index";
 
 @NgModule({
   declarations: [
@@ -17,11 +19,13 @@ import {RouterModule} from "@angular/router";
     BrowserModule,
     CommonModule,
     LandingModule,
+    LoginModule,
     MdButtonModule,
     MdIconModule,
     MdMenuModule,
     MdToolbarModule,
     RouterModule.forRoot([], {useHash: false}),
+    SignupModule
   ],
   providers: [],
   bootstrap: [AppComponent]
