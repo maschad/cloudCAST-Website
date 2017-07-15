@@ -42,11 +42,11 @@ describe('LandingComponent', () => {
      expect(component.form.contains('password')).toBeTruthy();
   });
 
-  it('Name must be filled in order to submit', () => {
-    let control = component.form.get('name');
-    control.setValue('');
-    expect(control.valid).toBeFalsy();
-  });
+    it('Name must be filled in order to submit', () => {
+        let control = component.form.get('name');
+        control.setValue('');
+        expect(control.valid).toBeFalsy();
+    });
 
     it('Email must be filled in order to submit', () => {
         let control = component.form.get('email');

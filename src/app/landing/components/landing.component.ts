@@ -1,5 +1,5 @@
 import {Component, OnInit, EventEmitter} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators, EmailValidator} from "@angular/forms";
 import {LandingService} from "../services/landing.service";
 
 @Component({
@@ -15,11 +15,7 @@ export class LandingComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private landingService:LandingService) {
       this.form = fb.group({
-          name: fb.group({
-              first: ['', Validators.minLength(5)],
-              last: ['', Validators.minLength(5)]
-          }),
-          email: '',
+          name: ['', Validators.minLength(5)],
       });
   }
 

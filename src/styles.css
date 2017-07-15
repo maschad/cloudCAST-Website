@@ -1,10 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+
 body {
-    background:lightgray;
+    font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+    margin: 0;
 }
 
-.example-spacer {
+
+
+app-homepage .header-background {
+    background: #3f51b5;
+}
+
+app-background {
+    background: #fafafa;
+}
+
+.button {
+    text-transform: uppercase;
+}
+
+.header-background {
+    height: 300px;
+    margin-bottom: 40px;
+}
+
+.header-section {
+    text-align: center;
+    padding-top: 60px;
+}
+
+material-app {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.spacer {
     flex: 1 1 auto;
 }
