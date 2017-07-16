@@ -1,24 +1,45 @@
 <!--The whole content below can be removed with the new code.-->
 <md-toolbar color="primary">
     <button class="button mat-button" md-button>
-        contact us
+        home
     </button>
-    <button class="button mat-button" md-button>
+    <button routerLink="/about" class="button mat-button" md-button>
          about us
     </button>
-    <button class="button mat-button" md-button>
-        lrem
+    <button routerLink="/news" class="button mat-button" md-button>
+        news
     </button>
-    <button class="button mat-button" md-button>
-        ipsum
+    <button routerLink="/contact" class="button mat-button" md-button>
+        contact
     </button>
     <span class="spacer"></span>
     <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
 </md-toolbar>
 
 <md-menu #appMenu="mdMenu">
-    <button md-menu-item> Settings </button>
-    <button md-menu-item> Help </button>
+    <button md-menu-item routerLink="/partners">
+        Partners and people
+    </button>
+    <button md-menu-item routerLink="/background">
+        Technical background
+    </button>
+    <button md-menu-item routerLink="/resources">
+        Resources
+    </button>
+
+    <button md-menu-item routerLink="/publications">
+        Publications
+    </button>
 </md-menu>
 
 <router-outlet></router-outlet>
+
+
+<footer class="footer">
+    <div class="footer-list">
+        <div class="footer-logo">
+            <img class="footer-logo" src="../assets/logo.png">
+        </div>
+    </div>
+</footer>
+

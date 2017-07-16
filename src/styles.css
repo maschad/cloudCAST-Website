@@ -13,7 +13,7 @@ app-homepage .header-background {
     background: #3f51b5;
 }
 
-app-background {
+.app-background {
     background: #fafafa;
 }
 
@@ -21,17 +21,36 @@ app-background {
     text-transform: uppercase;
 }
 
-.header-background {
-    height: 300px;
-    margin-bottom: 40px;
+.footer {
+    background: #3f51b5;
+    margin-top: 40px;
+    padding: 12px;
+    font-size: 12px;
 }
 
-.header-section {
-    text-align: center;
-    padding-top: 60px;
+.footer h1 {
+    color: hsla(0,0%,100%,.87);
 }
 
-material-app {
+.footer-list {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    padding: 8px;
+}
+
+.footer-logo {
+    height: 50px;
+}
+
+.material-app {
     position: absolute;
     top: 0;
     bottom: 0;
