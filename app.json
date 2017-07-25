@@ -1,0 +1,19 @@
+{
+  "name": "cloudcast-client",
+  "description": "",
+  "scripts": {
+    "postdeploy": "ng build --aot -prod"
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
