@@ -6,6 +6,11 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const compression = require('compression');
+
+
+// Gzip
+app.use(compression());
 
 // For all GET requests, send back index.html
 // so that PathLocationStrategy can be used
