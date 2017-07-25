@@ -1,6 +1,6 @@
 <!--The whole content below can be removed with the new code.-->
 <md-toolbar color="primary">
-    <button class="button mat-button" md-button>
+    <button routerLink="/" class="button mat-button"  md-button>
         home
     </button>
     <button routerLink="/about" class="button mat-button" md-button>
@@ -12,25 +12,37 @@
     <button routerLink="/contact" class="button mat-button" md-button>
         contact
     </button>
+    <button routerLink="/technical" class="button mat-button" [mdMenuTriggerFor]="techMenu" md-button>
+        Technical background
+    </button>
     <span class="spacer"></span>
-    <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
+    <md-icon>search</md-icon>
+    <md-input-container>
+        <input type="text" mdInput placeholder="search">
+    </md-input-container>
+    <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>more</md-icon></button>
 </md-toolbar>
 
+
+<!-- Technical Options -->
+<md-menu #techMenu="mdMenu">
+    <button md-menu-item routerLink="/technical/exemplar">Exemplar Apps</button>
+    <button md-menu-item routerLink="/technical/personal">Building Personal Recognisers</button>
+</md-menu>
+
+<!-- Additional options -->
 <md-menu #appMenu="mdMenu">
     <button md-menu-item routerLink="/partners">
         Partners and people
     </button>
-    <button md-menu-item routerLink="/background">
-        Technical background
-    </button>
     <button md-menu-item routerLink="/resources">
         Resources
     </button>
-
     <button md-menu-item routerLink="/publications">
         Publications
     </button>
 </md-menu>
+
 
 <router-outlet></router-outlet>
 

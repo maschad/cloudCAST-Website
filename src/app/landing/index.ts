@@ -9,7 +9,11 @@ import {LandingService} from "./services/landing.service";
 import {HttpModule} from "@angular/http";
 
 const routes: Routes = [
-    {path: '', component: LandingComponent}
+    {path: 'landing', component: LandingComponent},
+    {path: '',
+        redirectTo: '/landing',
+        pathMatch: 'full'
+    },
 ];
 
 
