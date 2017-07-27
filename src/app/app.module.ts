@@ -14,12 +14,14 @@ import {LoginModule} from "./login/index";
 import {SignupModule} from "./signup/index";
 import {AboutModule} from "./about/index";
 import {PageNotFoundModule} from "./page-not-found/index";
-import {TechnicalModule} from "./resources/index";
+import {TechnicalModule} from "./technical/index";
 import {ContactModule} from "./contact/index";
+import { PublicationsComponent } from './publications/publications.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PublicationsComponent,
   ],
   imports: [
     AboutModule,

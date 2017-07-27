@@ -50,6 +50,8 @@ app-homepage .header-background {
     height: 50px;
 }
 
+
+
 .material-app {
     position: absolute;
     top: 0;
@@ -68,3 +70,4 @@ app-homepage .header-background {
 .spacer {
     flex: 1 1 auto;
 }
+

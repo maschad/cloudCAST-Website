@@ -4,7 +4,7 @@
         home
     </button>
     <button routerLink="/about" class="button mat-button" md-button>
-         about us
+         about cloudcast
     </button>
     <button routerLink="/news" class="button mat-button" md-button>
         news
@@ -15,12 +15,15 @@
     <button routerLink="/technical" class="button mat-button" [mdMenuTriggerFor]="techMenu" md-button>
         Technical background
     </button>
+    <button routerLink="/publications" class="button mat-button" md-button>
+        Publications
+    </button>
     <span class="spacer"></span>
-    <md-icon>search</md-icon>
-    <md-input-container>
+    <button class="button mat-button" (click)="showSearch()"><md-icon>search</md-icon> </button>
+    <md-input-container *ngIf="showSearchBar" [@searchState]="showSearchBar">
         <input type="text" mdInput placeholder="search">
     </md-input-container>
-    <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>more</md-icon></button>
+    <!--<button md-button [mdMenuTriggerFor]="appMenu"><md-icon>more</md-icon></button>-->
 </md-toolbar>
 
 
@@ -37,9 +40,6 @@
     </button>
     <button md-menu-item routerLink="/resources">
         Resources
-    </button>
-    <button md-menu-item routerLink="/publications">
-        Publications
     </button>
 </md-menu>
 
