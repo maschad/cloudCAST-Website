@@ -18,8 +18,8 @@ import {trigger, transition, animate, style} from "@angular/animations";
   ]
 })
 export class AppComponent {
-  private title:string = 'Cloudcast';
-  private showSearchBar:boolean = false;
+    title:string = 'Cloudcast';
+   showSearchBar:boolean = false;
 
 
   private showSearch(): void {

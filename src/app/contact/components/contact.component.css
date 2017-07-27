@@ -10,13 +10,13 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding: 16px;
+    padding: 100px 80px 110px;
 }
 
-.example-form {
+.form {
     width: 500px;
 }
 
-.example-full-width {
+.full-width {
     width: 100%;
 }
