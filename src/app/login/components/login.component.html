@@ -1,3 +1,32 @@
-<p>
-  login works!
-</p>
+<header class="header-background">
+    <div class="header-section">
+        <div class="header-headline">
+            <h1 class="mat-h1"> Login </h1>
+            <h2 class="mat-h2"> Login User </h2>
+        </div>
+    </div>
+</header>
+
+
+
+<div id="login-box">
+  <div class="left">
+    <h1>Login</h1>
+
+    <input type="text" name="name" placeholder="Username" [(ngModel)] = "model.name" />
+      <mat-error *ngIf="form.controls['name'].hasError('required') && form.controls['name'].touched" class="alert alert-danger">You must include a username.</mat-error>
+    <input type="password" name="password" placeholder="Password" [(ngModel)] = "model.password" />
+  <mat-error *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched" class="alert alert-danger">You must include a password.</mat-error>
+
+    <input type="submit" name="signin_submit" value="Sign me in" (click)="login()"/>
+  </div>
+
+  <div class="right">
+    <span class="loginwith">Sign in with<br />social network</span>
+
+    <button class="social-signin facebook">Log in with facebook</button>
+    <button class="social-signin twitter">Log in with Twitter</button>
+    <button class="social-signin google">Log in with Google+</button>
+  </div>
+  <div class="or">OR</div>
+</div>

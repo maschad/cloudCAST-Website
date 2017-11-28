@@ -4,7 +4,7 @@ import {LandingComponent} from "./components/landing.component";
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {ReactiveFormsModule} from "@angular/forms";
-import {MdCardModule, MdButtonModule} from "@angular/material";
+import {MatCardModule, MatButtonModule} from "@angular/material";
 import {LandingService} from "./services/landing.service";
 import {HttpModule} from "@angular/http";
 
@@ -24,8 +24,8 @@ const routes: Routes = [
     imports:[
         CommonModule,
         HttpModule,
-        MdButtonModule,
-        MdCardModule,
+        MatButtonModule,
+        MatCardModule,
         ReactiveFormsModule,
         RouterModule.forChild(routes)
     ],

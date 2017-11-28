@@ -1,0 +1,47 @@
+
+
+
+<div >
+
+<span class="bckg"></span>
+<header>
+<h1>Dashboard</h1>
+<nav>
+  <ul>
+    <li>
+      <a href="javascript:void(0);" data-title="Projects">Projects</a>
+    </li>
+    <li>
+      <a href="javascript:void(0);" data-title="Team">Team</a>
+    </li>
+    <li>
+      <a href="javascript:void(0);" data-title="Diary">Diary</a>
+    </li>
+    <li>
+      <a href="javascript:void(0);" data-title="Timeline">Timeline</a>
+    </li>
+    <li>
+      <a href="javascript:void(0);" data-title="Settings">Settings</a>
+    </li>
+  </ul>
+</nav>
+</header>
+<main>
+<div class="title">
+  <h2>Projects</h2>
+
+</div>
+
+<article class="larg">
+  <div *ngFor="let application of applications">
+    <h3>{{ application.display_name }}<span class="entypo-down-open" (click)= "toggleStyles()"></span></h3>
+    <h4>Users</h4>
+    <p *ngFor="let user of application.users">
+      {{ user.name }} : {{user.role }}
+    </p>
+    <p  [ngClass] ='styles'>{{ application.description }}</p>
+  </div>
+
+</article>
+</main>
+  </div>

@@ -7,7 +7,7 @@ import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {ContactComponent} from "./components/contact.component";
-import {MdInputModule} from "@angular/material";
+import {MatInputModule} from "@angular/material";
 
 const routes: Routes = [
     {path: 'contact', component: ContactComponent}
@@ -21,7 +21,7 @@ const routes: Routes = [
     imports:[
         CommonModule,
         FormsModule,
-        MdInputModule,
+        MatInputModule,
         RouterModule.forChild(routes)
     ]
 })

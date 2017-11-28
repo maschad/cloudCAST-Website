@@ -1,3 +1,38 @@
-<p>
-  signup works!
-</p>
+<header class="header-background">
+    <div class="header-section">
+        <div class="header-headline">
+            <h1 class="mat-h1"> Registration </h1>
+            <h2 class="mat-h2"> Sign Up User </h2>
+        </div>
+    </div>
+</header>
+
+<div id="signup-box" [formGroup]="form">
+  <div class="left">
+    <h1>Signup</h1>
+
+    <input type="text" name="name" placeholder="Username" [(ngModel)] = "model.name" formControlName="name" />
+    <mat-error *ngIf="form.controls['name'].hasError('required') && form.controls['name'].touched" class="alert alert-danger">You must include a username.</mat-error>
+    <input type="text" name="first_name" placeholder="First Name" [(ngModel)] = "model.first_name" formControlName="first_name" />
+    <mat-error *ngIf="form.controls['first_name'].hasError('required') && form.controls['first_name'].touched" class="alert alert-danger">You must include a first name.</mat-error>
+    <input type="text" name="last_name" placeholder="Last Name" [(ngModel)] = "model.last_name" formControlName="last_name"/>
+    <mat-error *ngIf="form.controls['last_name'].hasError('required') && form.controls['last_name'].touched" class="alert alert-danger">You must include a last name.</mat-error>
+    <input type="text" name="email_address" placeholder="Email Address" [(ngModel)] = "model.email_address" formControlName="email_address"/>
+    <mat-error *ngIf="form.controls['email_address'].hasError('required') && form.controls['email_address'].touched" class="alert alert-danger">You must include a email address.</mat-error>
+    <input type="password" name="password" placeholder="Password" [(ngModel)] = "model.password" formControlName="password"/>
+    <mat-error *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched" class="alert alert-danger">You must include a password.</mat-error>
+    <input type="password" name="retype_password" placeholder="Retype Password" formControlName="retype_password" />
+    <mat-error *ngIf="form.controls['retype_password'].hasError('required') && form.controls['retype_password'].touched" class="alert alert-danger">You must include a confirm your password.</mat-error>
+
+    <input type="submit" name="signup_submit" value="Sign me Up" (click)= "register()"/>
+  </div>
+
+  <div class="right">
+    <span class="signupwith">Sign up with<br />social network</span>
+
+    <button class="social-signup facebook">SignUp with facebook</button>
+    <button class="social-signup twitter">SignUp with Twitter</button>
+    <button class="social-signup google">SignUp with Google+</button>
+  </div>
+  <div class="or">OR</div>
+</div>

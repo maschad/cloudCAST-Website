@@ -8,9 +8,17 @@ import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {ReactiveFormsModule} from "@angular/forms";
 import {LoginComponent} from "./components/login.component";
+import { LoginRedirect } from '../_services/login-redirect.service';
+import {
+  MatButtonModule, MatCheckboxModule, MatMenuModule, MatInputModule, MatSnackBarModule,
+       MatToolbarModule, MatDialogModule, MatSidenavModule, MatNativeDateModule,
+       MatCardModule, MatTabsModule, MatIconModule
+} from "@angular/material";
+import { FormsModule } from '@angular/forms';
+
 
 const routes: Routes = [
-    {path: 'login', component: LoginComponent}
+    {path: 'login', component: LoginComponent , canActivate:[LoginRedirect]}
 ];
 
 
@@ -19,7 +27,10 @@ const routes: Routes = [
         LoginComponent
     ],
     imports:[
-        CommonModule,
+        CommonModule,FormsModule,
+        MatButtonModule, MatCheckboxModule, MatMenuModule, MatInputModule, MatSnackBarModule,
+         MatToolbarModule, MatDialogModule, MatSidenavModule, MatNativeDateModule,
+         MatCardModule, MatTabsModule, MatIconModule,
         ReactiveFormsModule,
         RouterModule.forChild(routes)
     ]

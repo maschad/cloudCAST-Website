@@ -1,48 +1,81 @@
 <!--The whole content below can be removed with the new code.-->
-<md-toolbar color="primary">
-    <button routerLink="/" class="button mat-button"  md-button>
+<mat-toolbar color="primary">
+    <button  *ngIf="!loggedIn" routerLink="/" class="button mat-button"  mat-button>
         home
     </button>
-    <button routerLink="/about" class="button mat-button" md-button>
+    <button  *ngIf="loggedIn" routerLink="/dashboard" class="button mat-button"  mat-button>
+        home
+    </button>
+    <button routerLink="/about" class="button mat-button" mat-button>
         about cloudcast
     </button>
-    <button routerLink="/news" class="button mat-button" md-button>
+    <button routerLink="/news" class="button mat-button" mat-button>
         news
     </button>
-    <button routerLink="/contact" class="button mat-button" md-button>
-        contact
-    </button>
-    <button routerLink="/technical" class="button mat-button" [mdMenuTriggerFor]="techMenu" md-button>
+    <button routerLink="/partners" class="button mat-button" mat-button>
+        Partners and people
+      </button>
+    <button routerLink="/technical" class="button mat-button" mat-button>
         Technical background
     </button>
-    <button routerLink="/publications" class="button mat-button" md-button>
-        Publications
-    </button>
-    <span class="spacer"></span>
-    <button class="button mat-button" (click)="showSearch()"><md-icon>search</md-icon> </button>
-    <md-input-container *ngIf="showSearchBar" [@searchState]="showSearchBar">
-        <input type="text" mdInput placeholder="search">
-    </md-input-container>
-    <!--<button md-button [mdMenuTriggerFor]="appMenu"><md-icon>more</md-icon></button>-->
-</md-toolbar>
-
-
-<!-- Technical Options -->
-<md-menu #techMenu="mdMenu">
-    <button md-menu-item routerLink="/technical/exemplar">Exemplar Apps</button>
-    <button md-menu-item routerLink="/technical/personal">Building Personal Recognisers</button>
-</md-menu>
-
-<!-- Additional options -->
-<md-menu #appMenu="mdMenu">
-    <button md-menu-item routerLink="/partners">
-        Partners and people
-    </button>
-    <button md-menu-item routerLink="/resources">
+    <button class="button mat-button" [matMenuTriggerFor]="resourcesMenu" mat-button>
         Resources
     </button>
-</md-menu>
+    <button routerLink="/contact" class="button mat-button" mat-button>
+        contact
+    </button>
+    <button routerLink="/publications" class="button mat-button" mat-button>
+        Publications
+    </button>
 
+
+
+    <button *ngIf="!loggedIn" routerLink="/login" class="button mat-button" mat-button>
+
+        Login
+    </button>
+
+    <button *ngIf="loggedIn" (click)="logout()" class="button mat-button" mat-button>
+      Logout
+    </button>
+    <span class="spacer"></span>
+    <button class="button mat-button" (click)="showSearch()"><mat-icon>search</mat-icon> </button>
+    <mat-input-container *ngIf="showSearchBar" [@searchState]="showSearchBar">
+        <input type="text" matInput placeholder="search">
+    </mat-input-container>
+    <!--<button md-button [mdMenuTriggerFor]="appMenu"><md-icon>more</md-icon></button>-->
+</mat-toolbar>
+
+
+<!-- Resources Options -->
+<mat-menu #resourcesMenu="matMenu" [overlapTrigger]="false" xPosition="after">
+    <button *ngIf="!loggedIn" mat-menu-item routerLink="resources/signup">Registration</button>
+    <button mat-menu-item  [matMenuTriggerFor]="professionalsMenu">For Professionals</button>
+    <button mat-menu-item  [matMenuTriggerFor]="developersMenu">For Developers</button>
+    <button mat-menu-item  [matMenuTriggerFor]="databasesMenu">Databases</button>
+</mat-menu>
+
+<!-- Professionals Options -->
+<mat-menu #professionalsMenu="matMenu" [overlapTrigger]="false" xPosition="after">
+    <button mat-menu-item  routerLink="resources/professionals/exemplars" [matMenuTriggerFor]="exemplarsMenu">Exemplars</button>
+</mat-menu>
+
+<!-- Exemplars Options -->
+<mat-menu #exemplarsMenu="matMenu" [overlapTrigger]="false" xPosition="after">
+    <button mat-menu-item  routerLink="resources/professionals/exemplars/command-control">Command and Control</button>
+    <button mat-menu-item  routerLink="resources/professionals/exemplars/literacy-tutor">Literacy Tutor</button>
+      <button mat-menu-item  routerLink="resources/professionals/exemplars/therapy-tools">Therapy Tools</button>
+</mat-menu>
+
+<!-- Developers Options -->
+<mat-menu #developersMenu="matMenu" [overlapTrigger]="false" xPosition="after">
+    <button mat-menu-item  routerLink="resources/developers/building-personal-recognisers">Building Personal Recognisers</button>
+</mat-menu>
+
+<!-- Databases Options -->
+<mat-menu #databasesMenu="matMenu" [overlapTrigger]="false" xPosition="after">
+    <button mat-menu-item  routerLink="resources/databases/api">API</button>
+</mat-menu>
 
 <router-outlet></router-outlet>
 
@@ -56,5 +89,3 @@
         </div>
     </div>
 </footer>
-
-

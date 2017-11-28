@@ -12,7 +12,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {TechnicalComponent} from "./components/technical.component";
 import {ExemplarComponent} from "./components/exemplar.component";
 import {PersonalComponent} from "./components/personal.component";
-import {MdListModule} from "@angular/material";
+import {MatListModule} from "@angular/material";
 
 const routes: Routes = [
     {
@@ -20,7 +20,7 @@ const routes: Routes = [
         component: TechnicalComponent,
         children: [
             {
-                path:'exemplar',
+                path:'resources/professionals/exemplars',
                 component: ExemplarComponent
             },
             {
@@ -41,7 +41,7 @@ const routes: Routes = [
     imports:[
         CommonModule,
         ReactiveFormsModule,
-        MdListModule,
+        MatListModule,
         RouterModule.forChild(routes)
     ]
 })

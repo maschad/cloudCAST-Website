@@ -1,7 +1,7 @@
 import {Routes, RouterModule} from "@angular/router";
 import {AboutComponent} from "./components/about.component";
 import {NgModule} from "@angular/core";
-import {MdListModule} from "@angular/material";
+import {MatListModule} from "@angular/material";
 /**
  * Created by carlos on 7/16/17.
  */
@@ -15,7 +15,7 @@ const routes: Routes = [
         AboutComponent
     ],
     imports: [
-        MdListModule,
+        MatListModule,
         RouterModule.forChild(routes)
     ]
 })
