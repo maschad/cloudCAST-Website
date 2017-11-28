@@ -17,7 +17,7 @@ export class TherapyToolsComponent implements OnInit {
   private userService:UserService) { }
 
   openDialog(type:string): void {
-      let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      let dialogRef = this.dialog.open(DialogOverviewExampleDialog4, {
         width: '500px',
 
         data: { name: this.name, description: this.description }
@@ -70,10 +70,10 @@ export class TherapyToolsComponent implements OnInit {
 selector: 'dialog-overview-example-dialog',
 templateUrl: '../../popup/popup.component.html',
 })
-export class DialogOverviewExampleDialog {
+export class DialogOverviewExampleDialog4 {
 
 constructor(
-  public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+  public dialogRef: MatDialogRef<DialogOverviewExampleDialog4>,
   @Inject(MAT_DIALOG_DATA) public data: any) { }
 
 onNoClick(): void {

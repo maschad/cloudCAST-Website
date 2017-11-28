@@ -17,7 +17,7 @@ export class CommandControlComponent implements OnInit {
   private userService:UserService) { }
 
   openDialog(type:string): void {
-      let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      let dialogRef = this.dialog.open(DialogOverviewExampleDialog1, {
         width: '500px',
 
         data: { name: this.name, description: this.description }
@@ -67,13 +67,13 @@ export class CommandControlComponent implements OnInit {
 }
 
 @Component({
-selector: 'dialog-overview-example-dialog',
+selector: 'dialog-overview-example',
 templateUrl: '../../popup/popup.component.html',
 })
-export class DialogOverviewExampleDialog {
+export class DialogOverviewExampleDialog1 {
 
 constructor(
-  public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+  public dialogRef: MatDialogRef<DialogOverviewExampleDialog1>,
   @Inject(MAT_DIALOG_DATA) public data: any) { }
 
 onNoClick(): void {

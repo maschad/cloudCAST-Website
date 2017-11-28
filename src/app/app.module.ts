@@ -38,6 +38,10 @@ import { ApplicationsService } from './_services/applications.service';
 import { PopupComponent } from './popup/popup.component';
 //import { PublicationsComponent } from './publications/publications.component';
 import {DialogOverviewExampleDialog} from './exemplars/components/exemplars.component';
+import {DialogOverviewExampleDialog1} from './command-control/components/command-control.component';
+import {DialogOverviewExampleDialog2} from './building-personal-recognisers/components/building-personal-recognisers.component';
+import {DialogOverviewExampleDialog3} from './literacy-tutor/components/literacy-tutor.component';
+import {DialogOverviewExampleDialog4} from './therapy-tools/components/therapy-tools.component';
 import { FormsModule } from '@angular/forms';
 import { SharedService } from './_services/shared-service.service';
 
@@ -48,10 +52,17 @@ import { SharedService } from './_services/shared-service.service';
     AppComponent,
     AlertComponent,
     PopupComponent,
-    DialogOverviewExampleDialog
+    DialogOverviewExampleDialog,
+    DialogOverviewExampleDialog1,
+    DialogOverviewExampleDialog2,
+    DialogOverviewExampleDialog3,
+    DialogOverviewExampleDialog4
   //  PublicationsComponent,
   ],
-  entryComponents:[DialogOverviewExampleDialog],
+  entryComponents:[DialogOverviewExampleDialog,  DialogOverviewExampleDialog1,
+    DialogOverviewExampleDialog2,
+    DialogOverviewExampleDialog3,
+    DialogOverviewExampleDialog4],
   imports: [
     AboutModule,
     BrowserAnimationsModule,
