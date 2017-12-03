@@ -1,47 +1,45 @@
+<mat-sidenav-container class="example-container" layout="column" flex>
+    <mat-sidenav #sidenav mode="side" opened="true" class="example-sidenav">
+       <hr color="black" />
+       <p class="title">
+         Repositories
+       </p>
+       <hr color="black" />
 
+       <ul>
+          <li>
+            <a href="javascript:void(0);" data-title="Projects">Projects</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" data-title="Team">Team</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" data-title="Diary">Diary</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" data-title="Timeline">Timeline</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" data-title="Settings">Settings</a>
+          </li>
+        </ul>
+    </mat-sidenav>
 
+    <mat-sidenav-content>
 
-<div >
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+<section>
+  <mat-grid-list  cols="3" rowHeight=".5:.5" gutterSize="1em">
+    <mat-grid-tile ><button class="button mat-button"  mat-button><img src="../../../assets/add2.png" class="add-img" /><p>
+    Create a new Project
+    </p></button>
+    </mat-grid-tile>
 
-<span class="bckg"></span>
-<header>
-<h1>Dashboard</h1>
-<nav>
-  <ul>
-    <li>
-      <a href="javascript:void(0);" data-title="Projects">Projects</a>
-    </li>
-    <li>
-      <a href="javascript:void(0);" data-title="Team">Team</a>
-    </li>
-    <li>
-      <a href="javascript:void(0);" data-title="Diary">Diary</a>
-    </li>
-    <li>
-      <a href="javascript:void(0);" data-title="Timeline">Timeline</a>
-    </li>
-    <li>
-      <a href="javascript:void(0);" data-title="Settings">Settings</a>
-    </li>
-  </ul>
-</nav>
-</header>
-<main>
-<div class="title">
-  <h2>Projects</h2>
+    <mat-grid-tile *ngFor="let application of applications">
+      <p class="application-info">{{application.display_name}} ({{application.name}}) : {{application.description}}</p>
+      <button id="open" class="button mat-raised-button">Open</button>
+    </mat-grid-tile>
 
-</div>
-
-<article class="larg">
-  <div *ngFor="let application of applications">
-    <h3>{{ application.display_name }}<span class="entypo-down-open" (click)= "toggleStyles()"></span></h3>
-    <h4>Users</h4>
-    <p *ngFor="let user of application.users">
-      {{ user.name }} : {{user.role }}
-    </p>
-    <p  [ngClass] ='styles'>{{ application.description }}</p>
-  </div>
-
-</article>
-</main>
-  </div>
+  </mat-grid-list>
+</section>

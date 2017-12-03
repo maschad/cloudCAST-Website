@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {trigger, transition, animate, style} from "@angular/animations";
 import {AuthenticationService} from './_services/authentication.service';
 import {Observable} from 'rxjs';
@@ -21,13 +21,17 @@ import 'rxjs/add/operator/map';
   ],
 
 })
-export class AppComponent {
-  loggedIn = false;
+export class AppComponent implements OnInit{
+  isLoggedIn : Observable<boolean>;
+
     title:string = 'Cloudcast';
-   showSearchBar:boolean = false;
+  public showSearchBar:boolean = false;
 
    constructor(private auth: AuthenticationService) {
-    this.loggedIn = this.auth.isloggedIn();
+       this.isLoggedIn = this.auth.isLoggedIn();
+  }
+  ngOnInit() {
+    console.log("user logged in ", this.isLoggedIn)
   }
 
   logout(){
@@ -35,26 +39,12 @@ export class AppComponent {
     this.auth.logout();
   }
 
-  private showSearch(): void {
+  public showSearch(): void {
         this.showSearchBar = !this.showSearchBar;
 }
 
-authenticateUser(): Observable<boolean>{
-  if(this.loggedIn=== false)
-  {
-    return Observable.of(false);
-  }
-  let temp = this.auth.isloggedIn();
-  if(temp == true)
-  {
-    this.loggedIn = true;
-    return Observable.of(true);
-  }
-  else if(temp == false){
-    this.loggedIn = false;
-      return Observable.of(false);
-  }
-  }
+
+
 
 
 

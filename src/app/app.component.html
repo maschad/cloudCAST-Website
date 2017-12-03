@@ -1,9 +1,9 @@
 <!--The whole content below can be removed with the new code.-->
 <mat-toolbar color="primary">
-    <button  *ngIf="!loggedIn" routerLink="/" class="button mat-button"  mat-button>
+    <button   *ngIf="!(isLoggedIn | async)" routerLink="/" class="button mat-button"  mat-button>
         home
     </button>
-    <button  *ngIf="loggedIn" routerLink="/dashboard" class="button mat-button"  mat-button>
+    <button   *ngIf="(isLoggedIn | async)" routerLink="/dashboard" class="button mat-button"  mat-button>
         home
     </button>
     <button routerLink="/about" class="button mat-button" mat-button>
@@ -27,12 +27,12 @@
 
 
 
-    <button *ngIf="!loggedIn" routerLink="/login" class="button mat-button" mat-button>
+    <button  *ngIf="!(isLoggedIn | async)"routerLink="/login" class="button mat-button" mat-button>
 
         Login
     </button>
 
-    <button *ngIf="loggedIn" (click)="logout()" class="button mat-button" mat-button>
+    <button  *ngIf="(isLoggedIn | async)" (click)="logout()" class="button mat-button" mat-button>
       Logout
     </button>
     <span class="spacer"></span>
@@ -46,7 +46,7 @@
 
 <!-- Resources Options -->
 <mat-menu #resourcesMenu="matMenu" [overlapTrigger]="false" xPosition="after">
-    <button *ngIf="!loggedIn" mat-menu-item routerLink="resources/signup">Registration</button>
+    <button  *ngIf="!(isLoggedIn | async)" mat-menu-item routerLink="resources/signup">Registration</button>
     <button mat-menu-item  [matMenuTriggerFor]="professionalsMenu">For Professionals</button>
     <button mat-menu-item  [matMenuTriggerFor]="developersMenu">For Developers</button>
     <button mat-menu-item  [matMenuTriggerFor]="databasesMenu">Databases</button>
@@ -76,13 +76,13 @@
 
 <router-outlet></router-outlet>
 
-<footer class="footer">
+<!-- <footer class="footer">
     <div class="footer-list">
         <div class="footer-logo">
             <img class="footer-logo" src="../assets/logo.png">
         </div>
         <div class="footer-copyright">
-            <p>Powered by Chad Nehemiah. Code needs to be licensed under an MIT-style License</p>
+            <p>Code needs to be licensed under an MIT-style License</p>
         </div>
     </div>
-</footer>
+</footer> -->

@@ -1,7 +1,7 @@
 import { Component,Input, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ApplicationsService} from "../../_services/applications.service";
-
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 
 
@@ -14,16 +14,21 @@ import {ApplicationsService} from "../../_services/applications.service";
 
 export class DashboardComponent implements OnInit {
   styles = "hide-project-content";
-
+   options: FormGroup;
   constructor(private applicationsService: ApplicationsService
-  ) { }
-  private applications;
+  ,fb: FormBuilder) {this.options = fb.group({
+      'fixed': false,
+      'top': 0,
+      'bottom': 0,
+    }); }
+  public applications;
   private users;
   description: string;
   name: string;
   ngOnInit() {
     this.getApplications();
   }
+
 
 
   toggleStyles(){
@@ -38,7 +43,7 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  getApplications(){
+  public getApplications(){
     this.applicationsService.getAll("andre")
         .subscribe(data => {
                 console.log(data);

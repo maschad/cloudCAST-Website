@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import './rxjs-operators';
 import { AppComponent } from './app.component';
 import {CommonModule} from "@angular/common";
 import {LandingModule} from "./landing/index";
@@ -35,7 +35,7 @@ import { LoginRedirect } from './_services/login-redirect.service';
 import { SocialLoginModule, AuthServiceConfig } from "angular4-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angular4-social-login";
 import { ApplicationsService } from './_services/applications.service';
-import { PopupComponent } from './popup/popup.component';
+
 //import { PublicationsComponent } from './publications/publications.component';
 import {DialogOverviewExampleDialog} from './exemplars/components/exemplars.component';
 import {DialogOverviewExampleDialog1} from './command-control/components/command-control.component';
@@ -51,7 +51,6 @@ import { SharedService } from './_services/shared-service.service';
   declarations: [
     AppComponent,
     AlertComponent,
-    PopupComponent,
     DialogOverviewExampleDialog,
     DialogOverviewExampleDialog1,
     DialogOverviewExampleDialog2,
